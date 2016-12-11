@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="KitchenTicketScreenWidget">
+        <div class="receipt-screen screen touch-scrollable" >
+            <div class="pos-step-container">
+                <div class="pos-receipt-container">
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="KitchenTicketButton">
+        <span class="control-button order-printbill">
+            <i class="fa fa-print"></i>
+            Kitchen Ticket
+        </span>
+    </t>
+
+    <t t-name="KitchenTicket">
+        <div class="pos-sale-ticket">
+
+            <div class="pos-center-align"><t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
+                Date.CultureInfo.formatPatterns.longTime)"/> <t t-esc="order.get('name')"/></div>
+            <br />
+            <t t-esc="widget.pos.company.name"/><br />
+            Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
+            User: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
+            <br />
+            <div class="pos-center-align" style="font-size:1.2em;font-weight:bold;">Kitchen Ticket</div>
+            <br />
+            <table>
+                <colgroup>
+                    <col width='75%' />
+                    <col width='25%' />
+                </colgroup>
+                <tr t-foreach="orderlines" t-as="orderline">
+                    <td>
+                        <t t-esc="orderline.get_product().display_name"/>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+    </t>
+
+</templates>
