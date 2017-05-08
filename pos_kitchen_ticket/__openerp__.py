@@ -21,17 +21,19 @@
 ##############################################################################
 
 {
-    "name": "Kitchen Ticket",
-    "version": "8.0.1.0.0",
-    "author": "Dhinesh D <dvdhinesh.mail@gmail.com>",
-    "license": "AGPL-3",
+    "name": "POS Kitchen Ticket",
     "category": "Point Of Sale",
-    "depends": ['base', 'point_of_sale'],
+    "version": "8.0.1.0.0",
+    "depends": [
+        'point_of_sale'
+    ],
     'data': [
         "views/pos_template.xml",
     ],
     "qweb": [
         'static/src/xml/pos.xml',
     ],
+    "author": "Dhinesh D <dvdhinesh.mail@gmail.com>",
+    "license": "AGPL-3",
     "installable": True,
 }

@@ -60,7 +60,7 @@ openerp.pos_kitchen_ticket = function (instance) {
             this.pos.get('selectedOrder').destroy();
         },
         payOrder: function() {
-            self.pos_widget.screen_selector.set_current_screen('payment');
+            this.pos_widget.screen_selector.set_current_screen('payment');
         },
         refresh: function() {
             var order = this.pos.get('selectedOrder');
