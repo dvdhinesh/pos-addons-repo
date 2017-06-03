@@ -35,5 +35,5 @@
     ],
     "author": "Dhinesh D <dvdhinesh.mail@gmail.com>",
     "license": "AGPL-3",
-    "installable": True,
+    "installable": False,
 }
